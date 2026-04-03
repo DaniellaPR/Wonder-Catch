@@ -5,7 +5,7 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #08111f, #14243d, #243b55);
   color: white;
-  cursor: url("assets/imagen/CursorOvni.png"), auto;;
+  cursor: none;
 }
 
 #fondo-estrellas {
@@ -28,9 +28,18 @@ body {
   animation: titilar 2s infinite alternate;
 }
 
+#cursor-ovni {
+  position: fixed;
+  width: 40px;
+  pointer-events: none;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+}
+
 .contenedor {
   text-align: center;
-  padding-top: 60px;
+  padding-top: 40px;
   position: relative;
   z-index: 2;
 }
@@ -41,7 +50,26 @@ h1 {
 
 #texto {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.barra {
+  margin-bottom: 20px;
+}
+
+.barra button {
+  margin: 5px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  background: #ff5e7e;
+  color: white;
+  cursor: none;
+}
+
+#contador {
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 #monstruo {
@@ -49,8 +77,8 @@ h1 {
   left: 45%;
   top: 45%;
   width: 110px;
-  cursor: pointer;
   transition: transform 0.2s;
+  cursor: none;
 }
 
 #monstruo:hover {
@@ -90,6 +118,16 @@ h1 {
 #tarjetaMonstruo img {
   width: 110px;
   margin-top: 10px;
+}
+
+#seguirCazando {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #7d8cff;
+  color: white;
+  cursor: none;
 }
 
 #coleccion {
@@ -160,5 +198,3 @@ h1 {
     transform: scale(1.8);
   }
 }
-
-
