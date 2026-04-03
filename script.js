@@ -28,20 +28,25 @@ button.addEventListener("click", () => {
 
 
 
-
 let boton = document.getElementById("boton");
 let texto = document.getElementById("texto");
 let final = document.getElementById("final");
+let estrellaSecreta = document.getElementById("estrellaSecreta");
+let tesoro = document.getElementById("tesoro");
 
 let frases = [
-  "Casi... pero no.",
-  "¿No se deja atrapar tan fácil?",
-  "¿Ya te cansaste?.",
+  "Casi... pero todavía no.",
+  "La maravilla no se deja atrapar tan fácil.",
+  "Sigue intentando.",
   "Estás cada vez más cerca.",
   "No te rindas todavía."
 ];
 
 document.addEventListener("mousemove", function(evento) {
+  if (boton.style.display == "none") {
+    return;
+  }
+
   let rect = boton.getBoundingClientRect();
 
   let centroX = rect.left + rect.width / 2;
@@ -68,8 +73,13 @@ document.addEventListener("mousemove", function(evento) {
 
 boton.addEventListener("click", function() {
   boton.style.display = "none";
-  final.classList.remove("oculto");
   texto.textContent = "Lo lograste.";
+  final.classList.remove("oculto");
+  crearMuchasEstrellas();
+});
+
+estrellaSecreta.addEventListener("click", function() {
+  tesoro.classList.remove("oculto");
   crearMuchasEstrellas();
 });
 
