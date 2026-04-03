@@ -1,24 +1,65 @@
-const button = document.getElementById("runaway");
-const message = document.getElementById("message");
+let boton = document.getElementById("boton");
+let texto = document.getElementById("texto");
+let final = document.getElementById("final");
 
-document.addEventListener("mousemove", (e) => {
-  const rect = button.getBoundingClientRect();
+let frases = [
+  "Casi... pero no.",
+  "¿No se deja atrapar tan fácil?",
+  "¿Ya te cansaste?.",
+  "Estás cada vez más cerca.",
+  "No te rindas todavía."
+];
 
-  const dx = e.clientX - (rect.left + rect.width / 2);
-  const dy = e.clientY - (rect.top + rect.height / 2);
+document.addEventListener("mousemove", function(evento) {
+  let rect = boton.getBoundingClientRect();
 
-  const distance = Math.sqrt(dx * dx + dy * dy);
+  let centroX = rect.left + rect.width / 2;
+  let centroY = rect.top + rect.height / 2;
 
-  if (distance < 120) {
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
+  let distanciaX = evento.clientX - centroX;
+  let distanciaY = evento.clientY - centroY;
 
-    button.style.left = x + "px";
-    button.style.top = y + "px";
+  let distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
+
+  if (distancia < 140) {
+    let nuevoX = Math.random() * (window.innerWidth - 120);
+    let nuevoY = Math.random() * (window.innerHeight - 60);
+
+    boton.style.left = nuevoX + "px";
+    boton.style.top = nuevoY + "px";
+
+    let numero = Math.floor(Math.random() * frases.length);
+    texto.textContent = frases[numero];
+
+    crearEstrella(nuevoX + 40, nuevoY + 20);
   }
 });
 
-button.addEventListener("click", () => {
-  button.style.display = "none";
-  message.classList.remove("hidden");
+boton.addEventListener("click", function() {
+  boton.style.display = "none";
+  final.classList.remove("oculto");
+  texto.textContent = "Lo lograste.";
+  crearMuchasEstrellas();
 });
+
+function crearEstrella(x, y) {
+  let estrella = document.createElement("div");
+  estrella.className = "estrella";
+  estrella.textContent = "✨";
+  estrella.style.left = x + "px";
+  estrella.style.top = y + "px";
+
+  document.body.appendChild(estrella);
+
+  setTimeout(function() {
+    estrella.remove();
+  }, 1000);
+}
+
+function crearMuchasEstrellas() {
+  for (let i = 0; i < 20; i++) {
+    let x = Math.random() * window.innerWidth;
+    let y = Math.random() * window.innerHeight;
+    crearEstrella(x, y);
+  }
+}
