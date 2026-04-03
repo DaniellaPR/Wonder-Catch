@@ -1,35 +1,78 @@
 body {
-  background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
-  color: white;
-  font-family: sans-serif;
-  text-align: center;
+  margin: 0;
   height: 100vh;
   overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #08111f, #14243d, #243b55);
+  color: white;
+}
+
+.contenedor {
+  text-align: center;
+  padding-top: 60px;
 }
 
 h1 {
-  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
-button {
+#texto {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#boton {
   position: absolute;
-  padding: 15px 25px;
+  left: 45%;
+  top: 45%;
+  padding: 14px 24px;
   border: none;
-  border-radius: 10px;
-  background: #ff4b2b;
+  border-radius: 14px;
+  background: #ff5e7e;
   color: white;
+  font-size: 16px;
   cursor: pointer;
-  transition: transform 0.2s;
+  box-shadow: 0 0 15px rgba(255, 94, 126, 0.5);
 }
 
-#message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
+#boton:hover {
+  transform: scale(1.05);
 }
 
-.hidden {
+#final {
+  margin-top: 120px;
+  animation: aparecer 1s ease;
+}
+
+.oculto {
   display: none;
+}
+
+.estrella {
+  position: absolute;
+  font-size: 20px;
+  pointer-events: none;
+  animation: subir 1s linear forwards;
+}
+
+@keyframes subir {
+  from {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.5);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
