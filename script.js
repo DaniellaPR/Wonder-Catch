@@ -14,31 +14,31 @@ let cursorOvni = document.getElementById("cursor-ovni");
 let monstruos = [
   {
     nombre: "Camarón Galáctico",
-    imagen: "assets/img/Camaron4.png",
+    imagen: "assets/imagen/Camaron4.png",
     fondo: "assets/audio/Aylex - Turn It Louder-Fondo.mp3",
     sonido: "assets/audio/Camaroncito.mp3"
   },
   {
     nombre: "Conejo OVNI",
-    imagen: "assets/img/ConejOvni2.png",
+    imagen: "assets/imagen/ConejOvni2.png",
     fondo: "assets/audio/Burgundy - All Night-Fondo.mp3",
     sonido: "assets/audio/Conejito.mp3"
   },
   {
     nombre: "Gato OVNI",
-    imagen: "assets/img/GatOvni1.png",
+    imagen: "assets/imagen/GatOvni1.png",
     fondo: "assets/audio/Dagored - Listen To My Heartbeat-Fondo.mp3",
     sonido: "assets/audio/Gatito.mp3"
   },
   {
     nombre: "Hámster Estelar",
-    imagen: "assets/img/Hamster3.png",
+    imagen: "assets/imagen/Hamster3.png",
     fondo: "assets/audio/Damtaro - Combat-Fondo.mp3",
     sonido: "assets/audio/Hamstercito.mp3"
   },
   {
     nombre: "Vaca Mutada",
-    imagen: "assets/img/VacaMutada0.png",
+    imagen: "assets/imagen/VacaMutada0.png",
     fondo: "assets/audio/HiLau - Digital Soul-Fondo.mp3",
     sonido: "assets/audio/Vaquita.mp3"
   }
@@ -49,7 +49,8 @@ let frases = [
   "Casi la atrapas.",
   "Se escapó entre las estrellas.",
   "Sigue persiguiéndola.",
-  "Está cerca..."
+  "Estás cerca..."
+  "Tu raza estaría decepcionada"
 ];
 
 let monstruoActual;
