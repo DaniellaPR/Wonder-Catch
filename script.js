@@ -1,24 +1,46 @@
-let boton = document.getElementById("boton");
+let monstruo = document.getElementById("monstruo");
 let texto = document.getElementById("texto");
 let final = document.getElementById("final");
-let estrellaSecreta = document.getElementById("estrellaSecreta");
-let tesoro = document.getElementById("tesoro");
+let mensajeCaptura = document.getElementById("mensajeCaptura");
+let tarjetaMonstruo = document.getElementById("tarjetaMonstruo");
+let coleccion = document.getElementById("coleccion");
 let fondoEstrellas = document.getElementById("fondo-estrellas");
 
-let frases = [
-  "Casi... pero todavía no.",
-  "La maravilla no se deja atrapar tan fácil.",
-  "Sigue intentando.",
-  "Estás cada vez más cerca.",
-  "No te rindas todavía."
+let monstruos = [
+  {
+    nombre: "Zorblip",
+    imagen: "assets/img/monstruo1.png"
+  },
+  {
+    nombre: "Nébulo",
+    imagen: "assets/img/monstruo2.png"
+  },
+  {
+    nombre: "Krimix",
+    imagen: "assets/img/monstruo3.png"
+  }
 ];
 
+let frases = [
+  "La bestia te vio.",
+  "Casi la atrapas.",
+  "Se escapó entre las estrellas.",
+  "Sigue persiguiéndola.",
+  "Está cerca..."
+];
+
+let monstruoActual;
+let coleccionGuardada = [];
+
+elegirMonstruo();
+crearFondoEstrellas();
+
 document.addEventListener("mousemove", function(evento) {
-  if (boton.style.display == "none") {
+  if (monstruo.style.display == "none") {
     return;
   }
 
-  let rect = boton.getBoundingClientRect();
+  let rect = monstruo.getBoundingClientRect();
 
   let centroX = rect.left + rect.width / 2;
   let centroY = rect.top + rect.height / 2;
@@ -28,12 +50,12 @@ document.addEventListener("mousemove", function(evento) {
 
   let distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
 
-  if (distancia < 100) {
-    let nuevoX = Math.random() * (window.innerWidth - 120);
-    let nuevoY = Math.random() * (window.innerHeight - 60);
+  if (distancia < 120) {
+    let nuevoX = Math.random() * (window.innerWidth - 140);
+    let nuevoY = Math.random() * (window.innerHeight - 140);
 
-    boton.style.left = nuevoX + "px";
-    boton.style.top = nuevoY + "px";
+    monstruo.style.left = nuevoX + "px";
+    monstruo.style.top = nuevoY + "px";
 
     let numero = Math.floor(Math.random() * frases.length);
     texto.textContent = frases[numero];
@@ -42,17 +64,55 @@ document.addEventListener("mousemove", function(evento) {
   }
 });
 
-boton.addEventListener("click", function() {
-  boton.style.display = "none";
-  texto.textContent = "Lo lograste.";
+monstruo.addEventListener("click", function() {
+  monstruo.style.display = "none";
   final.classList.remove("oculto");
+
+  mensajeCaptura.textContent = "Atrapaste a " + monstruoActual.nombre;
+
+  tarjetaMonstruo.innerHTML =
+    "<img src='" + monstruoActual.imagen + "' alt='" + monstruoActual.nombre + "'>" +
+    "<p>" + monstruoActual.nombre + "</p>";
+
+  guardarEnColeccion(monstruoActual);
+  mostrarColeccion();
   crearMuchasEstrellas();
 });
 
-estrellaSecreta.addEventListener("click", function() {
-  tesoro.classList.remove("oculto");
-  crearMuchasEstrellas();
-});
+function elegirMonstruo() {
+  let numero = Math.floor(Math.random() * monstruos.length);
+  monstruoActual = monstruos[numero];
+  monstruo.src = monstruoActual.imagen;
+}
+
+function guardarEnColeccion(monstruoNuevo) {
+  let yaExiste = false;
+
+  for (let i = 0; i < coleccionGuardada.length; i++) {
+    if (coleccionGuardada[i].nombre == monstruoNuevo.nombre) {
+      yaExiste = true;
+    }
+  }
+
+  if (yaExiste == false) {
+    coleccionGuardada.push(monstruoNuevo);
+  }
+}
+
+function mostrarColeccion() {
+  coleccion.innerHTML = "";
+
+  for (let i = 0; i < coleccionGuardada.length; i++) {
+    let tarjeta = document.createElement("div");
+    tarjeta.className = "monstruo-coleccion";
+
+    tarjeta.innerHTML =
+      "<img src='" + coleccionGuardada[i].imagen + "' alt='" + coleccionGuardada[i].nombre + "'>" +
+      "<p>" + coleccionGuardada[i].nombre + "</p>";
+
+    coleccion.appendChild(tarjeta);
+  }
+}
 
 function crearEstrella(x, y) {
   let estrella = document.createElement("div");
@@ -95,5 +155,3 @@ function crearFondoEstrellas() {
     fondoEstrellas.appendChild(estrella);
   }
 }
-
-crearFondoEstrellas();
