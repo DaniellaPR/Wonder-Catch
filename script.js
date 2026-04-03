@@ -8,16 +8,24 @@ let fondoEstrellas = document.getElementById("fondo-estrellas");
 
 let monstruos = [
   {
-    nombre: "Zorblip",
-    imagen: "assets/img/monstruo1.png"
+    nombre: "Camarón Galáctico",
+    imagen: "assets/img/Camaron4.png"
   },
   {
-    nombre: "Nébulo",
-    imagen: "assets/img/monstruo2.png"
+    nombre: "Conejo OVNI",
+    imagen: "assets/img/ConejOvni2.png"
   },
   {
-    nombre: "Krimix",
-    imagen: "assets/img/monstruo3.png"
+    nombre: "Gato OVNI",
+    imagen: "assets/img/GatOvni1.png"
+  },
+  {
+    nombre: "Hámster Estelar",
+    imagen: "assets/img/Hamster3.png"
+  },
+  {
+    nombre: "Vaca Mutada",
+    imagen: "assets/img/VacaMutada0.png"
   }
 ];
 
@@ -50,9 +58,9 @@ document.addEventListener("mousemove", function(evento) {
 
   let distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
 
-  if (distancia < 120) {
-    let nuevoX = Math.random() * (window.innerWidth - 140);
-    let nuevoY = Math.random() * (window.innerHeight - 140);
+  if (distancia < 90) {
+    let nuevoX = Math.random() * (window.innerWidth - 160);
+    let nuevoY = Math.random() * (window.innerHeight - 160);
 
     monstruo.style.left = nuevoX + "px";
     monstruo.style.top = nuevoY + "px";
