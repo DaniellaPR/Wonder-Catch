@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atrapa la maravilla</title>
+  <title>Atrapa la bestia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,28 +11,26 @@
   <div id="fondo-estrellas"></div>
 
   <div class="contenedor">
-    <h1>✨ Atrapa la maravilla ✨</h1>
-    <p id="texto">Tu objetivo es tocar el botón para descubrir algo bonito.</p>
+    <h1>Atrapa la bestia</h1>
+    <p id="texto">Persigue a la criatura espacial y captúrala.</p>
 
-    <button id="boton">Tócame</button>
+    <img id="monstruo" src="" alt="Monstruo espacial">
 
     <div id="final" class="oculto">
       <div class="cielo">
         <div class="luna"></div>
-        <div class="estrella-secreta" id="estrellaSecreta">✦</div>
 
-        <h2>🌌 La encontraste 🌌</h2>
-        <p>La maravilla estaba escondida esperando que no te rindieras.</p>
+        <h2>Lograste capturarla</h2>
+        <p id="mensajeCaptura">Atrapaste a una bestia.</p>
 
-        <div id="tesoro" class="oculto">
-          <h3>💎 Tesoro secreto</h3>
-          <p>Encontraste una pequeña maravilla escondida en el cielo.</p>
-        </div>
+        <div id="tarjetaMonstruo"></div>
+
+        <h3>Tu colección</h3>
+        <div id="coleccion"></div>
       </div>
     </div>
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
