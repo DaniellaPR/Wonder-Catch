@@ -9,23 +9,23 @@ let fondoEstrellas = document.getElementById("fondo-estrellas");
 let monstruos = [
   {
     nombre: "Camarón Galáctico",
-    imagen: "assets/img/Camaron4.png"
+    imagen: "assets/imagen/Camaron4.png"
   },
   {
     nombre: "Conejo OVNI",
-    imagen: "assets/img/ConejOvni2.png"
+    imagen: "assets/imagen/ConejOvni2.png"
   },
   {
     nombre: "Gato OVNI",
-    imagen: "assets/img/GatOvni1.png"
+    imagen: "assets/imagen/GatOvni1.png"
   },
   {
     nombre: "Hámster Estelar",
-    imagen: "assets/img/Hamster3.png"
+    imagen: "assets/imagen/Hamster3.png"
   },
   {
     nombre: "Vaca Mutada",
-    imagen: "assets/img/VacaMutada0.png"
+    imagen: "assets/imagen/VacaMutada0.png"
   }
 ];
 
