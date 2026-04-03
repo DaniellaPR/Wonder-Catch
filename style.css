@@ -5,7 +5,7 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #08111f, #14243d, #243b55);
   color: white;
-  cursor: crosshair;
+  cursor: url("assets/img/CursorOvni.png"), auto;;
 }
 
 #fondo-estrellas {
