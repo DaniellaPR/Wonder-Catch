@@ -3,6 +3,7 @@ let texto = document.getElementById("texto");
 let final = document.getElementById("final");
 let estrellaSecreta = document.getElementById("estrellaSecreta");
 let tesoro = document.getElementById("tesoro");
+let fondoEstrellas = document.getElementById("fondo-estrellas");
 
 let frases = [
   "Casi... pero todavía no.",
@@ -74,3 +75,25 @@ function crearMuchasEstrellas() {
     crearEstrella(x, y);
   }
 }
+
+function crearFondoEstrellas() {
+  for (let i = 0; i < 80; i++) {
+    let estrella = document.createElement("div");
+    estrella.className = "estrellita-fondo";
+
+    let x = Math.random() * window.innerWidth;
+    let y = Math.random() * window.innerHeight;
+    let tiempo = Math.random() * 3 + 1;
+    let tamaño = Math.random() * 3 + 2;
+
+    estrella.style.left = x + "px";
+    estrella.style.top = y + "px";
+    estrella.style.width = tamaño + "px";
+    estrella.style.height = tamaño + "px";
+    estrella.style.animationDuration = tiempo + "s";
+
+    fondoEstrellas.appendChild(estrella);
+  }
+}
+
+crearFondoEstrellas();
