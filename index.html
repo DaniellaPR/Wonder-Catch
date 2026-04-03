@@ -10,9 +10,17 @@
 
   <div id="fondo-estrellas"></div>
 
+  <img id="cursor-ovni" src="assets/img/CursorOvni.png" alt="Cursor ovni">
+
   <div class="contenedor">
     <h1>🌌 Atrapa la bestia 🌌</h1>
-    <p id="texto">Honorifica a tu raza y captura las bestias.</p>
+    <p id="texto">Persigue a la criatura espacial y captúrala.</p>
+
+    <div class="barra">
+      <p id="contador">Bestias atrapadas: 0/5</p>
+      <button id="activarSonido">Activar sonido</button>
+      <button id="reiniciarColeccion">Reiniciar colección</button>
+    </div>
 
     <img id="monstruo" src="" alt="Monstruo espacial">
 
@@ -20,10 +28,12 @@
       <div class="cielo">
         <div class="luna"></div>
 
-        <h2>✨Lograste capturarla :D</h2>
+        <h2>✨ Captura lograda ✨</h2>
         <p id="mensajeCaptura">Atrapaste a una bestia.</p>
 
         <div id="tarjetaMonstruo"></div>
+
+        <button id="seguirCazando">Seguir cazando</button>
 
         <h3>Tu colección</h3>
         <div id="coleccion"></div>
