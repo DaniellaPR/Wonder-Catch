@@ -5,6 +5,7 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #08111f, #14243d, #243b55);
   color: white;
+  cursor: crosshair;
 }
 
 #fondo-estrellas {
@@ -27,7 +28,6 @@ body {
   animation: titilar 2s infinite alternate;
 }
 
-
 .contenedor {
   text-align: center;
   padding-top: 60px;
@@ -42,21 +42,16 @@ h1 {
   margin-bottom: 30px;
 }
 
-#boton {
+#monstruo {
   position: absolute;
   left: 45%;
   top: 45%;
-  padding: 14px 24px;
-  border: none;
-  border-radius: 14px;
-  background: #ff5e7e;
-  color: white;
-  font-size: 16px;
+  width: 110px;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 94, 126, 0.5);
+  transition: transform 0.2s;
 }
 
-#boton:hover {
+#monstruo:hover {
   transform: scale(1.05);
 }
 
@@ -90,22 +85,25 @@ h1 {
   animation: flotar 3s infinite ease-in-out;
 }
 
-.estrella-secreta {
-  position: absolute;
-  top: 30px;
-  right: 50px;
-  font-size: 30px;
-  cursor: pointer;
-  color: #ffe88a;
-  animation: brillar 1.5s infinite alternate;
+#tarjetaMonstruo img {
+  width: 100px;
+  margin-top: 10px;
 }
 
-#tesoro {
-  margin-top: 25px;
-  padding: 18px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  animation: aparecer 0.8s ease;
+#coleccion {
+  margin-top: 20px;
+}
+
+.monstruo-coleccion {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.monstruo-coleccion img {
+  width: 70px;
+  display: block;
+  margin: 0 auto 6px auto;
 }
 
 .estrella {
@@ -148,18 +146,6 @@ h1 {
     transform: translateY(0px);
   }
 }
-
-@keyframes brillar {
-  from {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
 
 @keyframes titilar {
   from {
