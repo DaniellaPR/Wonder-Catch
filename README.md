@@ -48,7 +48,7 @@ Dinámica:
 
 
 ## Pruébalo:
-https://tuusuario.github.io/wonder-chase/
+https://daniellapr.github.io/Wonder-Catch/
 
 
 ## Mejoras futuras:
