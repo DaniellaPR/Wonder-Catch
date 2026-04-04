@@ -49,7 +49,7 @@ let frases = [
   "Casi la atrapas.",
   "Se escapó entre las estrellas.",
   "Sigue persiguiéndola.",
-  "Estás cerca..."
+  "Estás cerca...",
   "Tu raza estaría decepcionada"
 ];
 
