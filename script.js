@@ -93,7 +93,7 @@ document.addEventListener("mousemove", function(evento) {
 
   let distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
 
-  if (distancia < 70) {
+  if (distancia < 50) {
     let nuevoX = Math.random() * (window.innerWidth - 160);
     let nuevoY = Math.random() * (window.innerHeight - 160);
 
