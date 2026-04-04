@@ -53,6 +53,7 @@ let frases = [
   "Tu raza estaría decepcionada"
 ];
 
+
 let monstruoActual;
 let coleccionGuardada = [];
 let sonidoActivo = false;
